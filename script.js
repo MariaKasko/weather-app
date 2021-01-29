@@ -44,11 +44,9 @@ app.getWeather = (city, hours) => {
         $('#icon').attr(`src`, `${app.imageUrl}${image}.png`);
         // save icon description to a variable
         const desc = result.weather[0].main;
-        console.log(desc)
             
         //getting timezone offset in seconds 
         const offset = result.timezone;
-        console.log('offset in seconds', offset); 
         app.getTime(offset, desc);
     });    
 }
@@ -80,8 +78,8 @@ app.getWeather = (city, hours) => {
                     $('body').css('background-image', `url(assets/${desc}-night.jpg)`);
                 }
             
-            } else { $('body').css('background-image', `url(assets/${desc}.jpg)`);
-        }
+        } else { $('body').css('background-image', `url(assets/${desc}.jpg)`);
+        }   
     }
 
 
